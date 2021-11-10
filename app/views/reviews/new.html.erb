@@ -1,0 +1,11 @@
+<h1>Add a review</h1>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <div class="form-inputs w-50">
+    <%= f.input :content, placeholder: "Let us know what you thought!..." %>
+    <%= f.label "Rating:" %>
+    <%= f.select :rating, 1..5 %>
+  <div class="form-actions btn btn-dark">
+    <%= f.button :submit, value: "Submit", class: "text-light" %>
+  </div>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Add a new restaurant</h1>
+
+
+
+<%= simple_form_for(@restaurant) do |f| %>
+  <div class="form-inputs w-50">
+    <%= f.input :name, placeholder: "Name of place..." %>
+    <%= f.label "Category:" %>
+    <%= f.select :category, collection: Restaurant::CATEGORIES %>
+    <%= f.input :address, placeholder: "Address of place..." %>
+    <%= f.input :phone_number, placeholder: "Phone number of place..." %>
+  </div>
+  <div class="form-actions btn btn-dark">
+    <%= f.button :submit, value: "Submit", class: "text-light" %>
+  </div>
+<% end %>
